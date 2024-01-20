@@ -24,7 +24,6 @@ const InputData = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validate target variable
     if (!targetVariable.trim()) {
       setError('Target variable cannot be empty');
       return;
@@ -32,7 +31,6 @@ const InputData = () => {
       setError('');
     }
 
-    // Validate selected file
     if (!selectedFile) {
       setFileError('Please select a CSV file');
       return;
@@ -40,7 +38,6 @@ const InputData = () => {
       setFileError('');
     }
 
-    // Validate file type
     const allowedExtension = 'csv';
     const fileExtension = selectedFile.name.split('.').pop().toLowerCase();
 
@@ -51,25 +48,25 @@ const InputData = () => {
       setFileError('');
     }
 
-    // Create a FormData object
     const formData = new FormData();
 
-    // Append form data to the FormData object
     formData.append('targetVariable', targetVariable);
     formData.append('showDiagram', showDiagram);
+    formData.append('csvFile', selectedFile);
 
-    // Append the selected file to the FormData object
-    formData.append('csvFile', selectedFile, selectedFile.name);
-
-    // Perform the form submission, for example, using fetch
     try {
-      const response = await fetch('your_submission_endpoint', {
+      const response = await fetch('http://127.0.0.1:8001/prediction/receiveFormData/', {
         method: 'POST',
         body: formData,
       });
-
-      // Handle the response as needed
-      console.log('Submission successful', response);
+  
+      if (response.ok) {
+        const responseData = await response.json();
+        console.log('Form data sent successfully');
+        console.log('API Response:', responseData);
+      } else {
+        console.error('Error sending form data');
+      }
     } catch (error) {
       console.error('Error submitting form', error);
     }
