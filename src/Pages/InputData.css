@@ -1,0 +1,89 @@
+.input-data-container {
+    max-width: 500px;
+    margin: auto;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 10px;
+    width: 20rem;
+}
+
+.target-input-container {
+    position: relative;
+    display: inline-block;
+}
+
+.target-input {
+    padding: 12px 5px;
+    width: 18rem;
+    margin-top: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+    font-size: medium;
+    transition: border-color 0.3s;
+    &:focus {
+        outline: none;
+        border-color: #BFDEFF;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #80BDFF;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        border: 2px solid #BFDEFF;
+        border-radius: 4px;
+        pointer-events: none;
+    }
+}
+
+
+.file-input-container {
+    border: 2px dashed #000;
+    padding: 81px;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.file-input-label {
+    display: block;
+}
+
+.file-input {
+    display: none;
+}
+
+.select-csv-button {
+    background-color: #0D6EFD;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.file-input-text {
+    margin-top: 10px;
+    width: 13rem;
+    margin-left: -29px;
+}
+
+.submit-button {
+    background-color: #F5F5F7;
+    color: black;
+    padding: 14px 15px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 4px;
+    width: 100%;
+    font-size: medium;
+}
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+  }
+  

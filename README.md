@@ -1,4 +1,4 @@
-## Decision Maker
+## Smart Decision Engine
 
 **&nbsp;ℹ&nbsp;Note**:
 
