@@ -5,6 +5,10 @@
 - We recommend a Chromium-based web browser for local development with HTTP. \
   Safari enforces HTTPS; therefore, it doesn't allow localhost through HTTP.
 - For more information, visit our [developer documentation](https://developers.miro.com).
+- 
+# 👨🏻‍💻 App Demo
+
+https://github.com/oumaima1115/Decision-maker/assets/98391753/f97142b9-f84c-4fd4-ae7c-aa724b6b2e9d
 
 ### How to start locally
 - Access to this repository and download the [backend project](https://github.com/oumaima1115/decision-maker-backend).
