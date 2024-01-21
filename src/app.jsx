@@ -3,18 +3,8 @@ import { createRoot } from 'react-dom/client';
 import InputData from './Pages/InputData';
 import '../src/assets/style.css';
 
-async function addSticky() {
-  const stickyNote = await miro.board.createStickyNote({
-    content: 'Hello, World!',
-  });
-
-  await miro.board.viewport.zoomTo(stickyNote);
-}
 
 const App = () => {
-  React.useEffect(() => {
-    addSticky();
-  }, []);
 
   return (
     <div className="grid wrapper">

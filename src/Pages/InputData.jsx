@@ -18,34 +18,6 @@ const InputData = () => {
     }
   };
 
-  const downloadImage = async (imageUrl) => {
-    try {
-      const fullImageUrl = `http://127.0.0.1:8001${imageUrl}`;
-      const response = await fetch(fullImageUrl);
-      const blob = await response.blob();
-  
-      const link = document.createElement('a');
-      link.href = window.URL.createObjectURL(blob);
-      link.download = imageUrl.split('/').pop();
-  
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } catch (error) {
-      console.error(`Error downloading image: ${imageUrl}`, error);
-    }
-  };
-  
-  
-
-  const handleDownloadImages = () => {
-    console.log(imageUrls); 
-    for (let i = 0; i < imageUrls.length; i++) {
-      downloadImage(imageUrls[i], i);
-    }
-  };
-  
-
   const handleSubmit = async (e) => {
     e.preventDefault();
   
@@ -82,7 +54,6 @@ const InputData = () => {
       if (responseData.status === 'success' && responseData.image_urls) {
         setImageUrls(responseData.image_urls.map(url => `http://127.0.0.1:8001${url}`));
         setShowImages(true);
-        handleDownloadImages();
       } else {
         setShowImages(false);
         setImageUrls([]);
@@ -102,9 +73,7 @@ const InputData = () => {
           {imageUrls.map((imageUrl, index) => (
             <img key={index} src={imageUrl} alt={`Image ${index}`} className="result-image" />
           ))}
-          <button className="download-button" onClick={handleDownloadImages}>
-            Download Images
-          </button>
+         
         </div>
       ) : (
         <form onSubmit={handleSubmit}>

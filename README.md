@@ -7,7 +7,7 @@
 - For more information, visit our [developer documentation](https://developers.miro.com).
 
 ### How to start locally
-
+- Access to this repository and download the [backend project](https://github.com/oumaima1115/decision-maker-backend).
 - Run `npm i` to install dependencies.
 - Run `npm start` to start developing. \
   Your URL should be similar to this example:
