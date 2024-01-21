@@ -1,8 +1,7 @@
 import * as React from 'react';
-import {createRoot} from 'react-dom/client';
-import InputData from './Pages/inputData';
+import { createRoot } from 'react-dom/client';
+import InputData from './Pages/InputData';
 import '../src/assets/style.css';
-
 
 async function addSticky() {
   const stickyNote = await miro.board.createStickyNote({
@@ -14,7 +13,7 @@ async function addSticky() {
 
 const App = () => {
   React.useEffect(() => {
-    //addSticky();
+    addSticky();
   }, []);
 
   return (
